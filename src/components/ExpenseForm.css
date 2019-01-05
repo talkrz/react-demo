@@ -19,22 +19,14 @@
   border: 1px solid #ccc;
 }
 
-/* @todo change to button and extract component */
-.ExpenseForm input[type="submit"] {
-  padding: 5px 20px;
-  justify-self: left;
-  align-self: center;
-  border: 1px solid #bbb;
-  font-weight: bold;
-  background: #fff;
-}
-
 .ExpenseForm label {
   grid-column: 1 / 2;
   align-self: center;
 }
 
 .ExpenseForm-submit {
+  justify-self: left;
+  align-self: center;
   grid-column: 3 / 4;
   grid-row: 2 / 3;
 }

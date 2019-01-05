@@ -5,3 +5,4 @@
 - add exchange rate edit
 - add sort
 - add tests
+- add deployment

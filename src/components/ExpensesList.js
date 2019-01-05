@@ -4,8 +4,6 @@ import ExpensesTable from './ExpensesTable';
 import { ExpenseContext } from '../stores/ExpenseStore';
 import './ExpensesList.css';
 
-
-
 export default function ExpensesList() {
   return (
     <ExpenseContext.Consumer>

@@ -14,8 +14,8 @@
 
 .ExpensesTable td {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
   border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
 }
@@ -31,21 +31,3 @@
 .ExpensesTable-actions {
   text-align: right;
 }
-
-.ExpensesTable button {
-  border-radius: 4px;
-  padding: 5px 20px;
-  border: 1px solid #bbb;
-  font-weight: bold;
-  background: #fff;
-}
-
-/* .ExpensesTable-recently-added {
-  animation-name: recently-added;
-  animation-duration: 1s;
-}
-
-@keyframes recently-added {
-  from {background-color: #f80;}
-  to {background-color: none;}
-} */

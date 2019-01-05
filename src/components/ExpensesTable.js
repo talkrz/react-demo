@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 import './ExpensesTable.css';
 
 export default function ExpenseForm({ expensesList, expenseRemove }) {
@@ -20,7 +21,7 @@ export default function ExpenseForm({ expensesList, expenseRemove }) {
               <td className="ExpensesTable-price">{expense.amount.toFixed(2)}</td>
               <td className="ExpensesTable-price">{expense.amountEur.toFixed(2)}</td>
               <td className="ExpensesTable-actions">
-                <button onClick={e => { expenseRemove(expense.idx) }}>Delete</button>
+                <Button text="Delete" onClick={e => { expenseRemove(expense.idx) }}/>
               </td>
             </tr>
           ))}

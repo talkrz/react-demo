@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Field from './form/Field';
+import Button from './Button';
 import './ExpenseForm.css';
 
 export default function ExpenseForm({ onSubmit }) {
@@ -66,7 +67,7 @@ export default function ExpenseForm({ onSubmit }) {
           )}
           error={errors.amount}
         />
-        <input className="ExpenseForm-submit" type="submit" value="Add" />
+        <Button className="ExpenseForm-submit" type="submit" text="Add" />
       </form>
     </div>
   )
