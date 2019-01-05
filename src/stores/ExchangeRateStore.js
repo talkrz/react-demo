@@ -5,8 +5,11 @@ export const ExchangeRateContext = React.createContext();
 export default function ExchangeRateStore({ children }) {
   // hardcoded initial state, normally should be fetched from storage
   const [exchangeRates, setExchangeRates] = useState({
-    eurpln: 4.382
+    EUR: 4.382,
+    USD: 3.771
   });
+
+  const [currency, setCurrency] = useState('EUR');
 
   // set exchange rate action
   function setExchangeRate(currencyPair, rate) {
@@ -16,8 +19,8 @@ export default function ExchangeRateStore({ children }) {
   }
 
   return (
-    <ExchangeRateContext.Provider value={{ exchangeRates, setExchangeRate }}>
-      {children}
+    <ExchangeRateContext.Provider value={{ exchangeRates, setExchangeRate, currency, setCurrency }}>
+     {children}
     </ExchangeRateContext.Provider>
   );
 }

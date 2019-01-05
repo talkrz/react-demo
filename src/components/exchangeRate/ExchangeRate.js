@@ -6,14 +6,21 @@ import './ExchangeRate.css';
 export default function ExchangeRate() {
   return (
     <ExchangeRateContext.Consumer>
-      {({ exchangeRates, setExchangeRate }) => (
+      {({ exchangeRates, setExchangeRate, currency, setCurrency }) => (
         <div className="ExchangeRate">
-          1 EUR =
+          1
+          <select value={currency} onChange={e => setCurrency(e.target.value)}>
+            {Object.keys(exchangeRates).map(currency => (
+              <option key={currency} value={currency}>{currency}</option>
+            ))}
+          </select>
+          =
           <Input
             type="text"
-            value={exchangeRates.eurpln}
-            onChange={e => setExchangeRate('eurpln', e.target.value)}
-          /> PLN
+            value={exchangeRates[currency]}
+            onChange={e => setExchangeRate(currency, e.target.value)}
+          />
+          PLN
         </div>
       )}
     </ExchangeRateContext.Consumer>

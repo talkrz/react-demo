@@ -11,8 +11,8 @@ class App extends Component {
     return (
       <ExchangeRateStore>
         <ExchangeRateContext.Consumer>
-          {({ exchangeRates }) => (
-            <ExpenseStore exchangeRates={exchangeRates}>
+          {({ exchangeRates, currency }) => (
+            <ExpenseStore exchangeRates={exchangeRates} currency={currency}>
               <div className="App">
                 <header className="App-header">
                   <div className="App-header-content">
