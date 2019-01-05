@@ -1,0 +1,56 @@
+.ExpenseForm form {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 150px 200px 200px auto;
+  margin-bottom: 20px;
+}
+
+.ExpenseForm input {
+  border-radius: 4px;
+  margin: 10px 10px 10px 0;
+}
+
+.ExpenseForm input[type="text"] {
+  padding: 5px;
+  width: 160px;
+  grid-column: 2 / 3;
+  justify-self: left;
+  align-self: center;
+  border: 1px solid #ccc;
+}
+
+/* @todo change to button and extract component */
+.ExpenseForm input[type="submit"] {
+  padding: 5px 20px;
+  justify-self: left;
+  align-self: center;
+  border: 1px solid #bbb;
+  font-weight: bold;
+  background: #fff;
+}
+
+.ExpenseForm label {
+  grid-column: 1 / 2;
+  align-self: center;
+}
+
+.ExpenseForm-submit {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+@media (max-width: 740px) {
+  .ExpenseForm-submit {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+}
+
+.ExpenseForm-error {
+  grid-column: 2 / 3;
+  justify-self: left;
+  align-self: center;
+  margin: 0;
+  font-size: 12px;
+  color: #f44;
+}

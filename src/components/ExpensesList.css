@@ -1,0 +1,10 @@
+.ExpensesList {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.ExpensesList-sum {
+  font-weight: bold;
+  margin: 10px;
+}

@@ -1,0 +1,51 @@
+.ExpensesTable table {
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.05);
+}
+
+.ExpensesTable thead {
+  font-weight: bold;
+}
+
+.ExpensesTable thead td {
+  background: #eee;
+}
+
+.ExpensesTable td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+
+.ExpensesTable tr:nth-child(2n) > td {
+  background: #f8f8f8;
+}
+
+.ExpensesTable-price {
+  text-align: right;
+}
+
+.ExpensesTable-actions {
+  text-align: right;
+}
+
+.ExpensesTable button {
+  border-radius: 4px;
+  padding: 5px 20px;
+  border: 1px solid #bbb;
+  font-weight: bold;
+  background: #fff;
+}
+
+/* .ExpensesTable-recently-added {
+  animation-name: recently-added;
+  animation-duration: 1s;
+}
+
+@keyframes recently-added {
+  from {background-color: #f80;}
+  to {background-color: none;}
+} */

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import ExpensesList from './components/ExpensesList';
+import ExchangeRate from './components/exchangeRate/ExchangeRate';
+import ExpenseStore from './stores/ExpenseStore';
+import ExchangeRateStore from './stores/ExchangeRateStore';
 import './App.css';
 
 class App extends Component {
@@ -7,19 +10,18 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <div className="App-header-content">
+            <h1>List of expenses</h1>
+            <ExchangeRateStore>
+              <ExchangeRate />
+            </ExchangeRateStore>
+          </div>
         </header>
+        <div id="App-content">
+          <ExpenseStore>
+            <ExpensesList />
+          </ExpenseStore>
+        </div>
       </div>
     );
   }
