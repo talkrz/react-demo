@@ -3,25 +3,20 @@ import fetchExpenses from '../dataSource/fetchExpenses';
 
 export const ExpenseContext = React.createContext();
 
-function exchangeRates() {
-  return {
-    eurpln: 4.382
-  };
-}
-
 /**
  * Create expenses computed state (sums, amounts converted to other currencies)
  * from minimal expenses data
  */
-function createExpensesList(expenses) {
+function createExpensesList(expenses, exchangeRates) {
   const expensesList = expenses.map((expense, idx) => ({
     // a little trick, normally we have some id from storage, but
     // not in this example, so let's just use item order from original array
     idx,
     title: expense.title,
     amount: parseFloat(expense.amount),
-    amountEur: parseFloat(expense.amount) / exchangeRates().eurpln, // @todo
+    amountEur: parseFloat(expense.amount) / exchangeRates.eurpln,
   }));
+
   return {
     expenses: expensesList,
     sumPln: expensesList.reduce((acc, current) => (acc + current.amount), 0.0),
@@ -29,7 +24,7 @@ function createExpensesList(expenses) {
   }
 }
 
-export default function ExpenseStore({ children }) {
+export default function ExpenseStore({ exchangeRates, children }) {
   const [expenses, setExpenses] = useState([]);
 
   // No need to use effect here but normally fetching data from external source
@@ -40,8 +35,8 @@ export default function ExpenseStore({ children }) {
 
   // memoize the computed state
   const expensesList = useMemo(
-    () => (createExpensesList(expenses)),
-    [expenses]
+    () => (createExpensesList(expenses, exchangeRates)),
+    [expenses, exchangeRates]
   );
 
   // remove action
