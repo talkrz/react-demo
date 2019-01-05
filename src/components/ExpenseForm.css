@@ -5,18 +5,10 @@
   margin-bottom: 20px;
 }
 
-.ExpenseForm input {
-  border-radius: 4px;
-  margin: 10px 10px 10px 0;
-}
-
 .ExpenseForm input[type="text"] {
-  padding: 5px;
-  width: 160px;
   grid-column: 2 / 3;
   justify-self: left;
   align-self: center;
-  border: 1px solid #ccc;
 }
 
 .ExpenseForm label {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Field from './form/Field';
 import Button from './Button';
+import Input from './Input';
 import './ExpenseForm.css';
 
 export default function ExpenseForm({ onSubmit }) {
@@ -45,7 +46,7 @@ export default function ExpenseForm({ onSubmit }) {
           id="title"
           label="Title of transaction"
           input={(id) => (
-            <input
+            <Input
               id={id}
               type="text"
               value={expenseTitle}
@@ -58,7 +59,7 @@ export default function ExpenseForm({ onSubmit }) {
           id="amount"
           label="Amount (in PLN)"
           input={(id) => (
-            <input
+            <Input
               id={id}
               type="text"
               value={expenseAmount}
