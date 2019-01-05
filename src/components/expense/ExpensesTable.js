@@ -6,6 +6,9 @@ export default function ExpenseForm({ expensesList, expenseRemove, currency }) {
   const [sort, setSort] = useState();
   const [sortAscDesc, setSortAscDesc] = useState();
 
+  /**
+   * Toggle between asc and desc sort by given column
+   */
   function toggleSort(sortField) {
     setSort(sortField);
     if (!sortAscDesc)
@@ -15,25 +18,37 @@ export default function ExpenseForm({ expensesList, expenseRemove, currency }) {
     }
   }
 
+  /**
+   * Sort expenses array
+   */
   function sortExpenses(expenses) {
     return expenses.sort((a, b) => {
       if (sort === 'title') {
-        return sortAscDesc ? a.title < b.title : a.title > b.title;
+        return sortAscDesc ?
+          a.title.toLowerCase() < b.title.toLowerCase()
+          : a.title.toLowerCase() > b.title.toLowerCase();
       }
       if (sort === 'amount') {
         return sortAscDesc ? a.amount < b.amount : a.amount > b.amount;
-      }
-      if (sort === 'amountCurrency') {
-        return sortAscDesc ? a.amountCurrency < b.amountCurrency : a.amountCurrency > b.amountCurrency;
       }
       return 0;
     })
   }
 
+  /**
+   * Get arrow depending on sort order
+   */
   function sortArrow(sortField) {
-    return sort === sortField ? sortAscDesc ? '&uarr;' : '&darr;' : '&uarr;&darr;';
+    return sort === sortField ?
+      sortAscDesc ?
+        '&uarr;'
+        : '&darr;'
+      : '&uarr;&darr;';
   }
 
+  /**
+   * Render sort button
+   */
   function sortButton(sortField) {
     return (
       <button
@@ -52,7 +67,7 @@ export default function ExpenseForm({ expensesList, expenseRemove, currency }) {
           <tr>
           <td>Title{sortButton('title')}</td>
           <td className="ExpensesTable-price">Amount (PLN){sortButton('amount')}</td>
-          <td className="ExpensesTable-price">Amount ({currency}){sortButton('amountCurrency')}</td>
+          <td className="ExpensesTable-price">Amount ({currency}){sortButton('amount')}</td>
           <td className="ExpensesTable-actions">Options</td>
           </tr>
         </thead>
