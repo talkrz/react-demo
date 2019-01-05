@@ -1,8 +1,8 @@
 import React from 'react';
 import ExpenseForm from './ExpenseForm';
 import ExpensesTable from './ExpensesTable';
-import { ExpenseContext } from '../stores/ExpenseStore';
-import { ExchangeRateContext } from '../stores/ExchangeRateStore';
+import { ExpenseContext } from '../../stores/ExpenseStore';
+import { ExchangeRateContext } from '../../stores/ExchangeRateStore';
 import './ExpensesList.css';
 
 export default function ExpensesList() {

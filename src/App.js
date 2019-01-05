@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ExpensesList from './components/ExpensesList';
+import ExpensesList from './components/expense/ExpensesList';
 import ExchangeRate from './components/exchangeRate/ExchangeRate';
 import ExpenseStore from './stores/ExpenseStore';
 import ExchangeRateStore from './stores/ExchangeRateStore';
