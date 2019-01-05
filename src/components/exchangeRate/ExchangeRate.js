@@ -1,6 +1,6 @@
 import React from 'react';
 import { ExchangeRateContext } from '../../stores/ExchangeRateStore';
-import Input from '../Input';
+import Input from '../common/Input';
 import './ExchangeRate.css';
 
 export default function ExchangeRate() {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Field from './form/Field';
-import Button from './Button';
-import Input from './Input';
+import Field from './common/FormField';
+import Button from './common/Button';
+import Input from './common/Input';
 import './ExpenseForm.css';
 
 export default function ExpenseForm({ onSubmit }) {
