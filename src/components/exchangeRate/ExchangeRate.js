@@ -1,11 +1,20 @@
 import React from 'react';
 import { ExchangeRateContext } from '../../stores/ExchangeRateStore';
+import Input from '../Input';
+import './ExchangeRate.css';
 
 export default function ExchangeRate() {
   return (
     <ExchangeRateContext.Consumer>
       {({ exchangeRates, setExchangeRate }) => (
-        <p>1 EUR = {exchangeRates.eurpln} PLN</p>
+        <div className="ExchangeRate">
+          1 EUR =
+          <Input
+            type="text"
+            value={exchangeRates.eurpln}
+            onChange={e => setExchangeRate('eurpln', e.target.value)}
+          /> PLN
+        </div>
       )}
     </ExchangeRateContext.Consumer>
   )

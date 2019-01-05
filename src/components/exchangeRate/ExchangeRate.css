@@ -1,0 +1,8 @@
+.ExchangeRate {
+  display: flex;
+  align-items: center;
+}
+
+.ExchangeRate input {
+  width: 50px;
+}
