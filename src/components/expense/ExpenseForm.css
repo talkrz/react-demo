@@ -1,41 +1,45 @@
 .ExpenseForm form {
   display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: 150px 200px 200px auto;
+  grid-template-columns: 50% auto;
   margin-bottom: 20px;
 }
 
-.ExpenseForm input[type="text"] {
-  grid-column: 2 / 3;
-  justify-self: left;
-  align-self: center;
+.ExpenseForm .FormField {
+  grid-column: 1 / 2;
+}
+
+.ExpenseForm .FormField-field {
+  display: flex;
+  align-items: center;
+}
+
+.ExpenseForm .FormField-error-message {
+  margin: 10px 0;
+  font-size: 12px;
+  color: #f44;
+}
+
+.ExpenseForm .FormField label {
   width: 160px;
 }
 
-.ExpenseForm label {
-  grid-column: 1 / 2;
-  align-self: center;
+.ExpenseForm input[type="text"] {
+  width: 160px;
 }
 
-.ExpenseForm-submit {
-  justify-self: left;
+.ExpenseForm button[type="submit"] {
   align-self: center;
-  grid-column: 3 / 4;
+  justify-self: left;
   grid-row: 2 / 3;
+  grid-column: 2 / 3;
 }
 
 @media (max-width: 740px) {
-  .ExpenseForm-submit {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
+  .ExpenseForm form {
+    grid-template-columns: 100%;
   }
-}
-
-.ExpenseForm-error {
-  grid-column: 2 / 3;
-  justify-self: left;
-  align-self: center;
-  margin: 0;
-  font-size: 12px;
-  color: #f44;
+  .ExpenseForm button[type="submit"]  {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
 }
