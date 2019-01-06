@@ -30,7 +30,7 @@ export default function ExpenseForm({ onSubmit }) {
     if (!data.title || data.title.length < 5) {
       validationErrors.title = "Title should have at least 5 characters";
     }
-    // @todo: extract and test
+
     if (!data.amount || !data.amount.toString().match(/^-?\d{1,6}(\.\d{1,2})?$/)) {
       validationErrors.amount = "Amount should be proper number in a form: '12.34'";
     }

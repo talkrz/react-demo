@@ -1,4 +1,12 @@
-## @todo
+# React demo
+https://talkrz.github.io/react-demo
 
-- remove @todo
-- add deployment
+## Run
+```
+npm start
+```
+
+## Test
+```
+npm test
+```
